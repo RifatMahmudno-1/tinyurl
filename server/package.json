@@ -1,0 +1,20 @@
+{
+	"type": "module",
+	"scripts": {
+		"dev": "tsx watch --clear-screen=false --ignore ../client --ignore ./build ./src/index.ts --dev",
+		"build": "tsc",
+		"start": "node ./build/index.js"
+	},
+	"dependencies": {
+		"@fastify/env": "^4.3.0",
+		"@fastify/static": "^7.0.4",
+		"@types/node": "^20.12.12",
+		"fastify": "^4.27.0",
+		"json-schema-to-ts": "^3.1.0",
+		"mongodb": "^6.6.2",
+		"nanoid": "^5.0.7",
+		"tsx": "^4.11.0",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.12"
+	}
+}
