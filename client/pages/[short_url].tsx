@@ -81,7 +81,7 @@ function Page() {
 	}, [reFetch])
 
 	return (
-		<div className="bg-cyan-200 w-full min-h-[100dvh] p-4 grid justify-items-center items-center">
+		<div className="bg-cyan-200 p-4 grid justify-items-center items-center">
 			{loading ? (
 				<CompLoading />
 			) : error ? (

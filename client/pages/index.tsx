@@ -57,7 +57,7 @@ function Page() {
 	}
 
 	return (
-		<div className="w-full min-h-[100dvh] bg-cyan-200 p-4 grid justify-items-center items-center" onSubmit={submit}>
+		<div className="bg-cyan-200 p-4 grid justify-items-center items-center" onSubmit={submit}>
 			{showError ? (
 				<CompError errorRemove={errorRemove} />
 			) : shortUrl ? (
@@ -65,7 +65,7 @@ function Page() {
 			) : (
 				<form className="w-full max-w-[30rem] bg-cyan-300 grid gap-2 p-2 rounded shadow-md">
 					<label htmlFor="url">Enter the Link/URL below:</label>
-					<input type="text" id="url" className="rounded px-1 bg-white" placeholder="Link/URL" spellCheck="false" required minLength={4} maxLength={2000} disabled={busy} onChange={inputChange} value={url} />
+					<input type="text" id="url" className="rounded px-1 bg-white" placeholder="Link/URL" spellCheck="false" autoCapitalize="false" autoCorrect="false" required minLength={4} maxLength={2000} disabled={busy} onChange={inputChange} value={url} />
 					{busy ? (
 						<div className="justify-self-center flex items-center gap-1">
 							<IconLoading /> <span>Please wait</span>

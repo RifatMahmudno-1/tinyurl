@@ -1,20 +1,19 @@
-import { StrictMode, Suspense } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, useRoutes } from 'react-router-dom'
 import routes from '~react-pages'
 import '@/assets/tailwind.css'
-import CompLoading from './components/CompLoading'
-
-function Loading() {
-	return (
-		<div className="bg-cyan-200 w-full min-h-[100dvh] p-4 grid justify-items-center items-center">
-			<CompLoading />
-		</div>
-	)
-}
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 function App() {
-	return <Suspense fallback={<Loading />}>{useRoutes(routes)}</Suspense>
+	return (
+		<div className="w-full min-h-[100dvh] grid grid-rows-[auto_1fr_auto]">
+			<Header />
+			{useRoutes(routes)}
+			<Footer />
+		</div>
+	)
 }
 
 createRoot(document.getElementById('root') as HTMLDivElement).render(
