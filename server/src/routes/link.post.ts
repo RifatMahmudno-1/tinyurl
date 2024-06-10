@@ -21,7 +21,7 @@ async function handler(req: FastifyRequest<{ Body: FromSchema<typeof bodySchema>
 		.findOne({ short_url: req.body.short_url }, { projection: { actual_url: 1, createdAt: 1, _id: 0 } })
 
 	if (!got) return res.status(404).send()
-	return res.header('cache-control', 'public, max-age=31536000, immutable').send(got)
+	return res.send(got)
 }
 
 export default { bodySchema, handler }
