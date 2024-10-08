@@ -6,15 +6,15 @@
 		"start": "node ./build/index.js"
 	},
 	"dependencies": {
-		"@fastify/env": "^4.3.0",
-		"@fastify/static": "^7.0.4",
-		"@types/node": "^20.12.12",
-		"fastify": "^4.27.0",
-		"json-schema-to-ts": "^3.1.0",
-		"mongodb": "^6.6.2",
+		"@fastify/env": "^5.0.1",
+		"@fastify/static": "^8.0.1",
+		"@types/node": "^22.7.5",
+		"fastify": "^5.0.0",
+		"json-schema-to-ts": "^3.1.1",
+		"mongodb": "^6.9.0",
 		"nanoid": "^5.0.7",
-		"tsx": "^4.11.0",
-		"typescript": "^5.4.5",
-		"vite": "^5.2.12"
+		"tsx": "^4.19.1",
+		"typescript": "^5.6.2",
+		"vite": "^5.4.8"
 	}
 }
