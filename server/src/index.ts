@@ -1,4 +1,4 @@
-import Fastify from 'fastify'
+import Fastify, { FastifyError } from 'fastify'
 import fastifyEnv from '@fastify/env'
 import setupVite from './utils/setupVite.js'
 import linkPost from './routes/link.post.js'
@@ -14,7 +14,7 @@ fastify.put('/link', { schema: { body: linkPut.bodySchema } }, linkPut.handler)
 fastify.post('/link', { schema: { body: linkPost.bodySchema } }, linkPost.handler)
 
 if (!process.argv.includes('--dev')) {
-	fastify.setErrorHandler((e, _, res) => {
+	fastify.setErrorHandler((e: FastifyError, _, res) => {
 		return res.status(e.statusCode || 500).send({
 			error: true,
 			statusCode: e.statusCode || 500
