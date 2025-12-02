@@ -22,10 +22,10 @@ export default async (fastify: FastifyInstance) => {
 			root: join(clientDir, './build/____'),
 			cacheControl: false,
 			wildcard: false,
-			setHeaders({ setHeader }, path, __) {
+			setHeaders(r, path, __) {
 				const bn = basename(path)
-				if (bn && bn.match(/.*-.{8}.[a-zA-Z0-9]+$/)?.[0] === bn) setHeader('cache-control', 'public, max-age=31536000, immutable')
-				else setHeader('cache-control', 'public, max-age=120, must-revalidate')
+				if (bn && bn.match(/.*-.{8}.[a-zA-Z0-9]+$/)?.[0] === bn) r.setHeader('cache-control', 'public, max-age=31536000, immutable')
+				else r.setHeader('cache-control', 'public, max-age=120, must-revalidate')
 			}
 		})
 		fastify.get('*', (_, res) => res.sendFile('index.html'))
