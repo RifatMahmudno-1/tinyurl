@@ -15,6 +15,7 @@ fastify.post('/link', { schema: { body: linkPost.bodySchema } }, linkPost.handle
 
 if (!process.argv.includes('--dev')) {
 	fastify.setErrorHandler((e: FastifyError, _, res) => {
+		console.error(e)
 		return res.status(e.statusCode || 500).send({
 			error: true,
 			statusCode: e.statusCode || 500
