@@ -3,16 +3,16 @@
 	"type": "module",
 	"version": "1.0.0",
 	"scripts": {
-		"install:client": "cd client && npm install",
-		"install:server": "cd server && npm install",
-		"install": "npm run install:client && npm run install:server",
-		"dev:server": "cd server && npm run dev",
-		"dev": "npm run dev:server",
-		"build:client": "cd client && npm run build",
-		"build:server": "cd server && npm run build",
-		"build": "npm run build:client && npm run build:server",
-		"start:server": "cd server && npm start",
-		"start": "npm run start:server"
+		"install:client": "cd client && pnpm install",
+		"install:server": "cd server && pnpm install",
+		"install": "pnpm run install:client && pnpm run install:server",
+		"dev:server": "cd server && pnpm run dev",
+		"dev": "pnpm run dev:server",
+		"build:client": "cd client && pnpm run build",
+		"build:server": "cd server && pnpm run build",
+		"build": "pnpm run build:client && pnpm run build:server",
+		"start:server": "cd server && pnpm start",
+		"start": "pnpm run start:server"
 	},
 	"description": "Startup template to start with vite, fastify and typescript",
 	"engines": {
